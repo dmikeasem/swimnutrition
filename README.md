@@ -1,5 +1,5 @@
-# One Month Rails Project
+# Swim Nutrition
 
-This is my sample app for [*One Month Rails*](http://www.onemonthrails.com)
+This is a blog and swim enthusiast app for [*SwimNutrition.com*](http://swimnutrition.com)
 
 by [me](http://www.mikeasem.com)
