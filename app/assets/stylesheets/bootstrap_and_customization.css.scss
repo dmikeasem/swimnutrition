@@ -1,6 +1,19 @@
-$body-bg: #3498db;
-$navbar-inverse-bg: #34495e;
+//Brand Colors
+$brand-primary: #34495e;
+$brand-info: #3498db;
+
+$body-bg: #fff;
+$navbar-inverse-bg: $brand-primary;
 $navbar-inverse-link-color: #fff;
+$btn-primary-color: #ecf0f1;
+$btn-primary-bg: $brand-primary;
+$jumbotron-bg: #3498db;
+$jumbotron-color: #ecf0f1;
+
+//Panels
+$panel-info-border: #3498db;
+$panel-info-heading-bg: #3498db;
+$panel-info-text: #ecf0f1;
 
 @import 'bootstrap';
 
