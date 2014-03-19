@@ -1,11 +1,13 @@
-<%= image_tag @post.image.url %>
+<%= image_tag @post.image.url, class: 'mediumIMG' %>
 
 <p>
-  <strong>Description:</strong>
+	<strong><h3>Title:</h3>
+  <%= @post.title %></strong>
+  <br>
+  <strong><h3>Description:</h3></strong>
   <%= @post.description %>
   <br>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
