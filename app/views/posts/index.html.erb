@@ -3,9 +3,10 @@
 <table class='table table-hover table-responsive'>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User ID</th>
+      <th><h3>Image</h3></th>
+      <th><h3>Title</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>User ID</h3></th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,7 +16,8 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= image_tag post.image.url %></td>
+        <td><strong><%= post.title %></strong></td>
         <td><%= post.description %></td>
         <td><%= post.user_id %></td>
         <td><%= link_to 'Show', post %></td>
