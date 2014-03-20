@@ -1,36 +1,18 @@
-<h1>Listing posts</h1>
-
-<table class='table table-hover table-responsive'>
-  <thead>
-    <tr>
-      <th><h3>Image</h3></th>
-      <th><h3>Title</h3></th>
-      <th><h3>Description</h3></th>
-      <th><h3>User ID</h3></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= image_tag post.image.url, class: 'thumbIMG' %></td>
-        <td><strong><%= post.title %></strong></td>
-        <td><%= post.description %></td>
-        <td><%= post.user_id %></td>
-        <td><%= link_to 'Show', post %></td>
+ <div id='posts' class='transitions-enabled'>
+  <% @posts.each do |post| %>
+    <div class='box panel panel-default'>
+      <%= image_tag post.image.url, class: 'mediumIMG' %>
+      <div class="panel-body">
+        <strong><%= post.title %></strong>
+        <%= post.description %>
+        <%= post.user_id %>
+        <strong><%= link_to 'Show', post %></strong>
         <% if post.user == current_user %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <strong><%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<br>
-<% if user_signed_in? %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
