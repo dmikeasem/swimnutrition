@@ -23,3 +23,9 @@ td {
 	font-weight: bold;
 	color: #fff;
 }
+
+@media only screen and (max-width: 770px) {
+	.mobile-minus {
+		display: none;
+	}
+}

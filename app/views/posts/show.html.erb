@@ -11,7 +11,7 @@
 
 				<p>
 					<strong><h3 class="center"><%= @post.title %></h3></strong>
-					<p><strong><%= @post.user.name if @post.user %></strong></p>
+					<p><strong><em>by <%= @post.user.name if @post.user %></em></strong></p>
 				  	<p><%= @post.description %></p>
 				  	
 

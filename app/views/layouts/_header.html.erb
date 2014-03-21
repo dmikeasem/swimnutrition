@@ -18,15 +18,14 @@
         <% if current_user.try(:admin?) %>
           <li>
             <%= link_to new_post_path do %>
-              <div class='btn navbar-btn btn-info' id='newpostbutton'><span class="glyphicon glyphicon-plus"></span>New Post</div>
+              <div class='btn navbar-btn btn-success' id='newpostbutton'><span class="glyphicon glyphicon-plus"></span>New Post</div>
             <% end %>
           </li>
         <% end %>
 
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", about_path %></li>
-        <li>
-          <div class='btn navbar-btn btn-info' id='productbutton'><%= link_to "Products", products_path, class: 'navbar-bold' %></div></li>
+
         <% if user_signed_in? == false %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %> 
@@ -34,6 +33,9 @@
           <li><%= link_to "Account", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% end %>
+        <li>
+          <div class='btn navbar-btn btn-info' id='productbutton'><%= link_to "Products", products_path, class: 'navbar-bold' %></div>
+        </li>
       </ul>
     </div><!-- /.container -->
   </div><!-- /.navbar-collapse -->
