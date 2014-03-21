@@ -8,11 +8,32 @@
         <strong><%= post.title %></strong><br>
         <%= post.description %><br>
         <em><%= post.user.name if post.user %></em>
-        <% if post.user == current_user %>
+        <% if current_user.try(:admin?) %>
           <div class='actions'>
-            <strong><%= link_to 'Edit', edit_post_path(post) %>
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
+            <strong><%= link_to 'Edit', edit_post_path(post), class: 'btn btn-xs btn-warning' %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'%></strong>
           </div>
+        <% end %>
+      </div>
+      <div class='panel-footer'>
+        <% if post.category == 'Nutrition' %>
+          <div id='nutritionP'>
+            <strong><%= post.category %></strong>
+          </div>
+        <% elsif post.category == 'Recovery' %>
+          <div id='recoveryP'>
+            <strong><%= post.category %></strong>
+          </div>
+        <% elsif post.category == 'Training' %>
+          <div id='trainingP'>
+            <strong><%= post.category %></strong>
+          </div>
+        <% elsif post.category == 'Inspiration' %>
+          <div id='inspirationP'>
+            <strong><%= post.category %></strong>
+          </div>
+        <% else %>
+            <strong><%= post.category %></strong>
         <% end %>
       </div>
     </div>

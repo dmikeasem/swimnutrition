@@ -10,15 +10,39 @@
 			<div class='panel-body'>
 
 				<p>
-					<strong><h3><%= @post.title %></h3></strong>
+					<strong><h3 class="center"><%= @post.title %></h3></strong>
 					<p><strong><%= @post.user.name if @post.user %></strong></p>
 				  	<p><%= @post.description %></p>
-				  	<p><%= @post.category %></p>
+				  	
+
+			        <% if @post.category == 'Nutrition' %>
+			          <div id='nutritionP'>
+			            <strong><%= @post.category %></strong>
+			          </div>
+			        <% elsif @post.category == 'Recovery' %>
+			          <div id='recoveryP'>
+			            <strong><%= @post.category %></strong>
+			          </div>
+			        <% elsif @post.category == 'Training' %>
+			          <div id='trainingP'>
+			            <strong><%= @post.category %></strong>
+			          </div>
+			        <% elsif @post.category == 'Inspiration' %>
+			          <div id='inspirationP'>
+			            <strong><%= @post.category %></strong>
+			          </div>
+			        <% else %>
+			            <strong><%= @post.category %></strong>
+			        <% end %>
+
+
+
 				  	<br>
 				  
 				</p>
 				<% if current_user.try(:admin?) %>
-					<%= link_to 'Edit', edit_post_path(@post) %>
+					<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning' %>
+					<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 				<% end %>
 			</div>
 		</div>

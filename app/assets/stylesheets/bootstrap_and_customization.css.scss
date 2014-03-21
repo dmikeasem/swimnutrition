@@ -1,6 +1,7 @@
 //Brand Colors
 $brand-primary: #1A3A57;
-$brand-info: #2ecc71;
+$brand-info: #3498db;
+$brand-success: #2ecc71;
 
 $body-bg: #ecf0f1;
 $navbar-inverse-bg: $brand-primary;
@@ -39,6 +40,35 @@ $panel-info-text: #ecf0f1;
 
 .jumbotron img {
 	width: 95%;
+}
+
+.panel-footer {
+	text-align: center;
+}
+
+#nutritionP {
+	color: #2ecc71;
+	text-transform: uppercase;
+}
+
+#recoveryP {
+	color: #8e44ad;
+	text-transform: uppercase;
+}
+
+#trainingP {
+	color: #d35400;
+	text-transform: uppercase;
+}
+
+#inspirationP {
+	color: #3498db;
+	text-transform: uppercase;
+}
+
+#newpostbutton {
+	margin-top: -10px;
+	margin-bottom: -10px;
 }
 
 
