@@ -18,6 +18,18 @@ $panel-info-text: #ecf0f1;
 
 @import 'bootstrap';
 
+
+//Fonts
+body {
+	font-family: 'Gentium Basic', serif;
+}
+
+.navbar, h1, h2, h3 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+//Misc.
+
 .center {
 	text-align: center;
 }
