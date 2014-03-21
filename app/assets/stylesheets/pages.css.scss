@@ -1,3 +1,24 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+td {
+	vertical-align: center;
+}
+
+.product-img {
+	min-height: 125px;
+	min-width: 125px;
+}
+
+.product-description {
+	max-width: 50%;
+}
+
+.btn-product {
+	vertical-align: center;
+}
+
+.navbar-bold {
+	font-weight: bold;
+}
