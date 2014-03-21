@@ -1,15 +1,17 @@
+ <%= render 'pages/home' %>
+
  <div id='posts' class='transitions-enabled'>
   <% @posts.each do |post| %>
-    <div class='box panel panel-default'>
-      <%= image_tag post.image.url, class: 'mediumIMG' %>
+    <div class='box panel panel-primary'>
+      <%= link_to image_tag(post.image.url, class: 'mediumIMG'), post %>
       <div class="panel-body">
-        <strong><%= post.title %></strong>
-        <%= post.description %>
-        <%= post.user_id %>
-        <strong><%= link_to 'Show', post %></strong>
+        <strong><%= post.title %></strong><br>
+        <%= post.description %><br>
         <% if post.user == current_user %>
-          <strong><%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
+          <div class='actions'>
+            <strong><%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
+          </div>
         <% end %>
       </div>
     </div>

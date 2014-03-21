@@ -1,14 +1,14 @@
 //Brand Colors
-$brand-primary: #34495e;
+$brand-primary: #1A3A57;
 $brand-info: #3498db;
 
-$body-bg: #fff;
+$body-bg: #ecf0f1;
 $navbar-inverse-bg: $brand-primary;
 $navbar-inverse-link-color: #fff;
 $btn-primary-color: #ecf0f1;
 $btn-primary-bg: $brand-primary;
-$jumbotron-bg: #3498db;
-$jumbotron-color: #ecf0f1;
+$jumbotron-bg: $brand-primary;
+$jumbotron-color: #fff;
 
 //Panels
 $panel-info-border: #3498db;
@@ -26,9 +26,27 @@ $panel-info-text: #ecf0f1;
 }
 
 .largeIMG {
-	width:500px;
+	width:400px;
 }
 
 .thumbIMG {
 	width: 100px;
 }
+
+.navbar-header img {
+	height: 45px;
+}
+
+.jumbotron img {
+	width: 95%;
+}
+
+
+/*.jumbotron {
+	background-image: url(/images/businesscard.png);
+	background-repeat: no-repeat;
+	color: black;
+	background-size: cover;
+	background-position: center;  
+	height: 25%;
+}*/

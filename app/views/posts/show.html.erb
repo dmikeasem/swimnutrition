@@ -1,15 +1,24 @@
-<%= image_tag @post.image.url, class: 'largeIMG' %>
+<%= link_to 'Back', posts_path %>
 
-<p>
-	<strong><h3>Title:</h3>
-  <%= @post.title %></strong>
-  <br>
-  <strong><h3>Description:</h3></strong>
-  <%= @post.description %>
-  <br>
-  
-</p>
-<% if user_signed_in? %>
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-	<%= link_to 'Back', posts_path %>
-<% end %>
+
+<div class='row'>
+	<div class='col-md-offset-2 col-md-8'>
+		<div class='panel panel-primary'>
+			<div class='panel-heading center'>
+				<%= image_tag @post.image.url, class: 'largeIMG' %>
+			</div>
+			<div class='panel-body'>
+
+				<p>
+					<strong><h3><%= @post.title %></h3></strong>
+				  <p><%= @post.description %></p>
+				  <br>
+				  
+				</p>
+				<% if user_signed_in? %>
+					<%= link_to 'Edit', edit_post_path(@post) %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
