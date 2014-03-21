@@ -5,6 +5,7 @@ Pinteresting::Application.routes.draw do
   root "posts#index"
   get "about" => "pages#about"
   get "products" => "pages#products"
+  get "createsuperbossperson" => "pages#create_admin"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,11 @@
+<h1>BOSS PAGE</h1>
+
+<% if user_signed_in? %>
+
+	<%= button_to 'Create Super Boss Person!', current_user.update_attribute :admin, true %>
+
+<% else %>
+		
+		user not
+
+<% end %>

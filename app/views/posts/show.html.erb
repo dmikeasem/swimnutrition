@@ -16,7 +16,7 @@
 				  	<br>
 				  
 				</p>
-				<% if user_signed_in? %>
+				<% if current_user.try(:admin?) %>
 					<%= link_to 'Edit', edit_post_path(@post) %>
 				<% end %>
 			</div>
