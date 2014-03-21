@@ -11,8 +11,9 @@
 
 				<p>
 					<strong><h3><%= @post.title %></h3></strong>
-				  <p><%= @post.description %></p>
-				  <br>
+					<p><strong><%= @post.user.name if @post.user %></strong></p>
+				  	<p><%= @post.description %></p>
+				  	<br>
 				  
 				</p>
 				<% if user_signed_in? %>

@@ -1,4 +1,4 @@
-<div class='panel panel-info'>
+<div class='panel panel-primary'>
   <div class='panel-heading'>
     <div class='panel-title'><h1>Edit <%= resource_name.to_s.humanize %></h1></div>
   </div>    
@@ -7,9 +7,14 @@
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
         <%= devise_error_messages! %>
 
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control", :autofocus => true %>
+        </div>
+
         <div class='form-group'>
           <%= f.label :preferred_email %><br />
-          <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+          <%= f.email_field :email, class: 'form-control' %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

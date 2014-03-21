@@ -7,6 +7,7 @@
       <div class="panel-body">
         <strong><%= post.title %></strong><br>
         <%= post.description %><br>
+        <em><%= post.user.name if post.user %></em>
         <% if post.user == current_user %>
           <div class='actions'>
             <strong><%= link_to 'Edit', edit_post_path(post) %>
