@@ -24,6 +24,17 @@ td {
 	color: #fff;
 }
 
+.hlink a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	transition: all .2s ease-in-out;
+}
+
+.hlink a:hover {
+	color: #2ecc71;
+}
+
 @media only screen and (max-width: 770px) {
 	.mobile-minus {
 		display: none;

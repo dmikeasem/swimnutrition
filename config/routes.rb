@@ -1,4 +1,6 @@
 Pinteresting::Application.routes.draw do
+  resources :pins
+
   resources :posts
 
   devise_for :users
@@ -6,6 +8,7 @@ Pinteresting::Application.routes.draw do
   get "about" => "pages#about"
   get "products" => "pages#products"
   get "createsuperbossperson" => "pages#create_admin"
+  get "community" => "pins#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

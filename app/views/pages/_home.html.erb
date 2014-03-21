@@ -1,6 +1,12 @@
 <div class="jumbotron center">
 	<%= image_tag('/images/header.png') %>
-	
+	<% if !user_signed_in? %>
+		<p class='lead hlink'><%= link_to 'Join our community', community_path %> to view and share pins with other lovers of all things swimming, or feel free to just look around our posts on swimming, healthy living, and all around awesomeness in and out of the water!<br><br></p>
+		<p>
+	    	<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+	    	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-lg" %>
+	  	</p>
+	<% end %>
 	<!--<p>If we're gonna help swimmers all over the world,<br> it's gonna take a while to fill a big enough pool...</p><br>
 	<%= link_to "Coming Soon", about_path , class: 'btn btn-default btn-lg' %>-->
 

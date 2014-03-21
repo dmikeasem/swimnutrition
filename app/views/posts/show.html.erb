@@ -1,4 +1,4 @@
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path, class: 'btn btn-default' %>
 
 
 <div class='row'>
@@ -12,7 +12,7 @@
 				<p>
 					<strong><h3 class="center"><%= @post.title %></h3></strong>
 					<p><strong><em>by <%= @post.user.name if @post.user %></em></strong></p>
-				  	<p><%= @post.description %></p>
+				  	<blockquote><p><%= @post.description %></p></blockquote>
 				  	
 
 			        <% if @post.category == 'Nutrition' %>
@@ -41,8 +41,14 @@
 				  
 				</p>
 				<% if current_user.try(:admin?) %>
-					<%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning' %>
-					<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+					<%= link_to edit_post_path(@post), class: 'btn btn-xs btn-warning' do %>
+		              <span class="glyphicon glyphicon-edit"></span>
+		              Edit
+		            <% end %>
+		            <%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' do %>
+		              <span class="glyphicon glyphicon-trash"></span>
+		              Delete
+		            <% end %>
 				<% end %>
 			</div>
 		</div>
