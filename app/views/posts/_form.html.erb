@@ -10,6 +10,12 @@
       </ul>
     </div>
   <% end %>
+  <br><br>
+  <div class='form-group'>
+    <%= f.label :category %><br>
+    <%= f.select :category, options_for_select(%w[Nutrition Training Recovery Inspiration Random]) %>
+  </div>
+  <br>
 
   <div class="form-group">
     <%= f.label :title %><br>
@@ -26,6 +32,6 @@
     <%= f.text_area :description, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Post", class: 'btn btn-lg btn-primary' %>
   </div>
 <% end %>
