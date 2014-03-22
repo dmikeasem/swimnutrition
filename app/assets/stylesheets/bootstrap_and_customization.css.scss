@@ -32,11 +32,27 @@ h1, h2, h3 {
 	font-weight: bold;
 }
 
+//Footer
+footer {
+	background-color: #7f8c8d;
+	color: #ecf0f1;
+	padding: 10px;
+	margin-top: 25px;
+}
+
+footer a {
+	text-decoration: none;
+	color: #ecf0f1;
+	transition: all .2s ease;
+	opacity: 1;
+}
+
+footer a:hover {
+	color: #bdc3c7;
+}
+
 //Misc.
 
-footer {
-	background-color: #555;
-}
 
 .center {
 	text-align: center;
