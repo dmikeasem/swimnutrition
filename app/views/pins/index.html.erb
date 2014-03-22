@@ -4,6 +4,9 @@
     <p>Sign in to view and share pins with other people who love swimming, being healthy, and all around awesomeness in and out of the pool!</p>
     <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-lg" %>
+  <% else %>
+    <h2>Welcome, <%= current_user.name if current_user %>!</h2>
+    <p>Check out pins about training, nutrition, inspiration and more from fellow swimming enthusiasts - and be sure to share your own as well!</p>
   <% end %>
 </div>
 
@@ -15,7 +18,7 @@
         <div class="panel-body">
           <%= pin.tag %><br>
           <em>Pinned by <%= pin.user.name if pin.user %></em><br>
-          <% if pin.user == current_user %>
+          <% if pin.user == current_user || current_user.try(:admin?) %>
             <%= link_to edit_pin_path(pin), class: 'btn btn-xs btn-warning' do %>
                 <span class="glyphicon glyphicon-edit"></span>
                 Edit
