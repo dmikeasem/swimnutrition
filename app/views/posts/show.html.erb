@@ -12,7 +12,7 @@
 				<p>
 					<strong><h3 class="center"><%= @post.title %></h3></strong>
 					<p><strong><em>by <%= @post.user.name if @post.user %></em></strong></p>
-				  	<blockquote><p><%= @post.description %></p></blockquote>
+				  	<blockquote><p><%= @post.body %></p></blockquote>
 				  	
 
 			        <% if @post.category == 'Nutrition' %>

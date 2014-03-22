@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
 	has_attached_file :image
 
 	validates :image, presence: true
-	validates :description, presence: true
+	validates :body, presence: true
 end
