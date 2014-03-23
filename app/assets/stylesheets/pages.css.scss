@@ -44,6 +44,11 @@ td {
 	display: none;
 }
 
+
+.btn-info a, .btn-success a, .btn-danger a, .btn-warning a {
+	color: #fff;
+}
+
 @media only screen and (max-width: 770px) {
 	.mobile-minus {
 		display: none;
