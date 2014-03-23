@@ -12,16 +12,30 @@
   <% end %>
   <br><br>
 
-  <div class="form-group">
+  <div class="form-group mobile-minus">
     <%= f.label :image %><br>
     <%= f.file_field :image, class: 'form-control' %><br>
   </div>
 
-  <div class="form-group">
+  <div class="mobile-plus">
+    <span class="glyphicon glyphicon-camera"></span> <small><em>(Click 'Choose File' to take photo or pull from gallery)</em></small>
+    <div class="form-group">
+      <%= f.file_field :image, class: 'form-control' %><br>
+    </div>
+  </div>
+
+  <div class="form-group mobile-minus">
     <%= f.label :tag %><br>
     <%= f.text_area :tag, class: 'form-control' %>
   </div>
+
+  <div class="mobile-plus">
+    <span class="glyphicon glyphicon-pencil"></span> <small><em>(Say something...)</em></small>
+    <div class="form-group">
+      <%= f.text_area :tag, class: 'form-control' %>
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit "Create Pin", class: 'btn btn-lg btn-info' %>
-  </div>
+  </div><br>
 <% end %>
