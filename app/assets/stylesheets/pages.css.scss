@@ -40,8 +40,15 @@ td {
 	margin: 7.5% 0;
 }
 
+.mobile-plus {
+	display: none;
+}
+
 @media only screen and (max-width: 770px) {
 	.mobile-minus {
 		display: none;
+	}
+	.mobile-plus {
+		display: initial;
 	}
 }

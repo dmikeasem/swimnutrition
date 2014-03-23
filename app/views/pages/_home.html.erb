@@ -9,7 +9,13 @@
     <h2>Welcome, <%= current_user.name if current_user %>!</h2><br>
     <p class='mobile-minus'>Check out pins about training, nutrition, inspiration and more from fellow swimming enthusiasts - and be sure to share your own as well!</p><br>
     <%= link_to new_pin_path do %>
-              <div class='btn btn-lg btn-info'><span class="glyphicon glyphicon-plus"></span> New Pin</div>
-            <% end %>
+      <div class='btn btn-lg btn-info'><span class="glyphicon glyphicon-plus"></span> New Pin</div>
+    <% end %>
+    <%= link_to blog_path do %>
+      <div class='btn btn-lg btn-default mobile-plus'><span class="glyphicon glyphicon-book"></span> Blog</div>
+    <% end %>
+    <%= link_to products_path do %>
+      <div class='btn btn-lg btn-success mobile-plus'><span class="glyphicon glyphicon-gift"></span> Products</div>
+    <% end %>
   <% end %>
 </div>
