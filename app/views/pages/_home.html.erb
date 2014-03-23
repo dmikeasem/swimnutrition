@@ -1,13 +1,15 @@
 <div class="jumbotron center">
-	<%= image_tag('/images/header.png') %>
-	<% if !user_signed_in? %>
-		<p class='lead hlink'><%= link_to 'Join our community', community_path %> to view and share pins with other lovers of all things swimming, or feel free to just look around our posts on swimming, healthy living, and all around awesomeness in and out of the water!<br><br></p>
-		<p>
-	    	<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-	    	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-lg" %>
-	  	</p>
-	<% end %>
-	<!--<p>If we're gonna help swimmers all over the world,<br> it's gonna take a while to fill a big enough pool...</p><br>
-	<%= link_to "Coming Soon", about_path , class: 'btn btn-default btn-lg' %>-->
-
+  <%= image_tag('/images/header.png') %>
+  <% if !user_signed_in? %>
+    <h2>Welcome!</h2>
+    <p class='hlink'>Sign in to view and share pins with other people who love swimming, being healthy, and all around awesomeness in and out of the pool!<span class='mobile-minus'> Also, feel free to check out our <strong><%= link_to 'blog', blog_path %></strong> from our official contributors!</span></p>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-lg" %>
+  <% else %>
+    <h2>Welcome, <%= current_user.name if current_user %>!</h2><br>
+    <p class='mobile-minus'>Check out pins about training, nutrition, inspiration and more from fellow swimming enthusiasts - and be sure to share your own as well!</p><br>
+    <%= link_to new_pin_path do %>
+              <div class='btn btn-lg btn-info'><span class="glyphicon glyphicon-plus"></span> New Pin</div>
+            <% end %>
+  <% end %>
 </div>

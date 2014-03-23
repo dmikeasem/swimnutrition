@@ -1,38 +1,27 @@
-<div class="jumbotron center">
-  <h1>COMMUNITY PINS</h1><br>
-  <% if !user_signed_in? %>
-    <p>Sign in to view and share pins with other people who love swimming, being healthy, and all around awesomeness in and out of the pool!</p>
-    <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-lg" %>
-  <% else %>
-    <h2>Welcome, <%= current_user.name if current_user %>!</h2>
-    <p>Check out pins about training, nutrition, inspiration and more from fellow swimming enthusiasts - and be sure to share your own as well!</p>
+<%= render 'pages/home' %>
+
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="box panel panel-info">
+      <%= link_to image_tag(pin.image.url, class: 'mediumIMG'), pin %>
+      <div class="panel-body">
+        <%= pin.tag %><br>
+        <em>Pinned by <%= pin.user.name if pin.user %></em><br>
+        <% if pin.user == current_user || current_user.try(:admin?) %>
+          <%= link_to edit_pin_path(pin), class: 'btn btn-xs btn-warning' do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<% if user_signed_in? %>
-  <div id="pins" class="transitions-enabled">
-    <% @pins.each do |pin| %>
-      <div class="box panel panel-info">
-        <%= link_to image_tag(pin.image.url, class: 'mediumIMG'), pin %>
-        <div class="panel-body">
-          <%= pin.tag %><br>
-          <em>Pinned by <%= pin.user.name if pin.user %></em><br>
-          <% if pin.user == current_user || current_user.try(:admin?) %>
-            <%= link_to edit_pin_path(pin), class: 'btn btn-xs btn-warning' do %>
-                <span class="glyphicon glyphicon-edit"></span>
-                Edit
-              <% end %>
-              <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' do %>
-                <span class="glyphicon glyphicon-trash"></span>
-                Delete
-              <% end %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
 
 <div class="center">
    <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>

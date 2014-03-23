@@ -1,5 +1,9 @@
- <%= render 'pages/home' %>
-
+<div class="panel panel-primary">
+  <div class="panel-heading center">
+    <%= image_tag('/images/logo-no-com.png', class: 'mobile-minus') %>
+    <h1>BLOG</h1>
+  </div>
+  <div class='panel-body'>
  <div id='posts' class='transitions-enabled'>
   <% @posts.each do |post| %>
     <div class='box panel panel-primary'>
@@ -42,6 +46,8 @@
       </div>
     </div>
   <% end %>
+</div>
+</div>
 </div>
 
 <div class="center">
